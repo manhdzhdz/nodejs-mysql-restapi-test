@@ -25,7 +25,7 @@ export const createEmployee = async (req, res) => {
 export const getEmployees = async (req, res) => {
   //manejo de errores... si el servidor BD no esta disponible
   try {
-    throw new Error("DB Error!");
+    // throw new Error("DB Error!");
     const [rows] = await pool.query("SELECT * FROM employee");
     res.json(rows);
   } catch (error) {
@@ -37,7 +37,7 @@ export const getEmployees = async (req, res) => {
 
 export const getEmployee = async (req, res) => {
   try {
-    throw new Error('Error inesperado!')
+    // throw new Error('Error inesperado!')
     // console.log(req.params.id)
     const [rows] = await pool.query("SELECT * FROM employee WHERE id = ?", [
       req.params.id,
